@@ -1,0 +1,21 @@
+const majority = (array, callback) => {
+  let half = array.length / 2;
+  
+  let count = 0;
+  array.forEach(el => {
+    if (callback(el)) {
+      count++;
+    }
+  })
+  
+  if (count > half) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Uncomment these to check your work!
+const isOdd = function(num) { return num % 2 === 1; };
+console.log(majority([1, 2, 3, 4, 5], isOdd)); // should log: true
+console.log(majority([2, 3, 4, 5], isOdd)); // should log: false
