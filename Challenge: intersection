@@ -1,0 +1,29 @@
+const intersection = (arrays) => {
+  return arrays.reduce((acc, next) => acc.filter(element => next.includes(element)));
+}
+
+// Uncomment these to check your work!
+const arr1 = [5, 10, 15, 20];
+const arr2 = [15, 88, 1, 5, 7];
+const arr3 = [1, 10, 15, 5, 20];
+console.log(intersection([arr1, arr2, arr3])); // should log: [5, 15]
+
+// const intersection = (arrays) => {
+//   let result = [];
+  
+//   for (let i = 0; i < arrays[0].length; i++) {
+//     let temp = arrays.reduce((acc, next) => {
+//       if (next.indexOf(arrays[0][i]) === -1) {
+//         return false;
+//       } else {
+//         return acc;
+//       }
+//     });
+    
+//     if (temp) {
+//       result.push(arrays[0][i]);
+//     }
+//   }
+  
+//   return result;
+// }
