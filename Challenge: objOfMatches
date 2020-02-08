@@ -1,0 +1,27 @@
+const objOfMatches = (arr1, arr2, callback) => {
+  return arr1.reduce((acc, next, index) => {
+    if (callback(next) === arr2[index]) {
+      acc[next] = arr2[index];
+    }
+    return acc;
+  }, {});
+}
+
+// Uncomment these to check your work!
+const arr1 = ['hi', 'howdy', 'bye', 'later', 'hello'];
+const arr2 = ['HI', 'Howdy', 'BYE', 'later', 'HELLO'];
+function uppercaser(str) { return str.toUpperCase(); }
+console.log(objOfMatches(arr1, arr2, uppercaser)); // should log: { hi: 'HI', bye: 'BYE', hello: 'HELLO' }
+
+// const objOfMatches = (arr1, arr2, callback) => {
+//   // return reduce on the first arr with an acc, next, index
+//   return arr1.reduce((acc, next, index) => {
+//     // if callback performed on arr1 is equal the arr2 index
+//     if (callback(next) === arr2[index]) {
+//       // acc and next value = arr2's index
+//       acc[next] = arr2[index];
+//     }
+//     // return the acc with the key value pair
+//     return acc;
+//     }, {})
+// }
