@@ -1,0 +1,42 @@
+const reduce = (array, callback, initial) => {
+  let acc = initial;
+  
+  array.forEach(el => {
+    acc = callback(acc, el);
+  });
+  
+  return acc;
+}
+
+// Uncomment these to check your work!
+const nums = [4, 1, 3];
+const add = function(a, b) { return a + b; }
+console.log(reduce(nums, add, 0)); // should log 8
+
+// input: array, callback, initial value;
+// output: a single value
+
+// check to see if first arg is an array
+// initialize our acc value
+// check to see if third arg the initial value is defined
+// iterate over the array
+// set the acc to be the result of calling the callback with the arguments acc, and current element
+// return the acc 
+
+// const reduce = (array, callback, initial) => {
+//   if (Array.isArray(array) === true) {
+//     let acc;
+//     if (initial === undefined) {
+//       acc = array[0];
+//       array = array.splice(1);
+//     } else {
+//       acc = initial;
+//     }
+    
+//     array.forEach(el => {
+//       acc = callback(acc, el);
+//     });
+//     return acc;
+//   }
+//   return null;
+// }
