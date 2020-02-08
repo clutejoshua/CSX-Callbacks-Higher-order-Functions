@@ -1,0 +1,18 @@
+const prioritize = (array, callback) => {
+  let truthy = [], falsey = [];
+  
+  array.forEach(el => {
+    if (callback(el)) {
+      truthy.push(el);
+    } else {
+      falsey.push(el);
+    }
+  });
+  
+  return truthy.concat(falsey);
+}
+
+// Uncomment these to check your work!
+function startsWithS(str) { return str[0].toLowerCase() === 's'; }
+const tvShows = ['curb', 'rickandmorty', 'seinfeld', 'sunny', 'friends']
+console.log(prioritize(tvShows, startsWithS)); // should log: ['seinfeld', 'sunny', 'curb', 'rickandmorty', 'friends']
