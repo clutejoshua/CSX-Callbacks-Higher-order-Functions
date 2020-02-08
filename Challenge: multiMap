@@ -1,0 +1,30 @@
+const multiMap = (itemArray, funcArray) => {
+  let obj = {};
+  
+  for (let element of itemArray) {
+    obj[element] = funcArray.map(eachFunc => eachFunc(element));
+  }
+  
+  return obj;
+}
+
+
+// Uncomment these to check your work!
+function uppercaser(str) { return str.toUpperCase(); }
+function capitalize(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }
+function repeater(str) { return str + str; }
+const items = ['catfood', 'glue', 'beer'];
+const functions = [uppercaser, capitalize, repeater];
+console.log(multiMap(items, functions)); // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
+
+// const multiMap = (arrayOfValues, arrayOfCallbacks) => {
+//   let obj = {};
+//   arrayOfValues.forEach(value => {
+//     let outputArray = [];
+//     arrayOfCallbacks.forEach(callback => {
+//       outputArray.push(callback(value));
+//       obj[value] = outputArray;
+//     })
+//   })
+//   return obj;
+// }
